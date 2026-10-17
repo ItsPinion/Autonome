@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Racing Track Builder</title>
+    <style>
+      body { margin: 0; background: #1b1b1b; color: #eee; font-family: system-ui, sans-serif; }
+      #toolbar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 8px; max-width: 960px; margin: 0 auto; box-sizing: border-box; }
+      #build-tools { display: contents; }
+      button { padding: 6px 10px; border: 1px solid #555; background: #333; color: #eee; border-radius: 4px; cursor: pointer; font-size: 14px; }
+      button.active { background: #e63946; border-color: #e63946; }
+      #mode { background: #2a9d8f; border-color: #2a9d8f; margin-left: auto; }
+      #hint { font-size: 13px; opacity: 0.8; width: 100%; }
+      #game { width: 100%; max-width: 960px; aspect-ratio: 960 / 600; margin: 0 auto; }
+      [hidden] { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <div id="toolbar">
+      <span id="build-tools">
+        <button data-tool="road">Road</button>
+        <button data-tool="checkpoint">Checkpoint</button>
+        <button data-tool="finish">Finish line</button>
+        <button data-tool="blocker">Blocker</button>
+        <button data-tool="erase">Erase</button>
+        <button id="undo">Undo point</button>
+        <button id="clear">Clear all</button>
+      </span>
+      <button id="restart" hidden>Restart (R)</button>
+      <button id="mode">Start Race</button>
+      <span id="hint"></span>
+    </div>
+    <div id="game"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
